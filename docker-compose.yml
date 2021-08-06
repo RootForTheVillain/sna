@@ -29,19 +29,17 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ../sna-postgres:/var/lib/postgresql/data
-      - ../sna-postgres:/docker-entrypoint-initdb.d/data.dump
+      - ./sna-postgres:/docker-entrypoint-initdb.d
     environment:
-      # PGDATA: /var/lib/postgresql/data
-      #POSTGRES_USER: "postgres"
-      #POSTGRES_PASSWORD: ""
-      #POSTGRES_DB: "postgres"
-      #POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_USER: "sna-db-user"
-      POSTGRES_PASSWORD: "p@$$w0rd"
-      POSTGRES_DB: "sna"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: ""
+      POSTGRES_DB: "postgres"
+      POSTGRES_HOST_AUTH_METHOD: trust
+      #POSTGRES_USER: "sna-db-user"
+      #POSTGRES_PASSWORD: "p@$$w0rd"
+      #POSTGRES_DB: "sna"
     networks: 
       - sna-api-dev
 volumes: 
   pgdata:
-    #external: true
+    external: true
