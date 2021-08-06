@@ -1,0 +1,5 @@
+## Don't check these things into Git
+
+*postgres-backups/
+*v1.wiki/
+*sna-ui/

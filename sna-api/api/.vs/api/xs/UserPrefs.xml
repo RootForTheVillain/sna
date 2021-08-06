@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{02FF0964-7FF3-49D8-B884-440C0D2DEF94}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Provider.cs">
+    <Files>
+      <File FileName="Controllers/NetworkController.cs" Line="55" Column="25" />
+      <File FileName="Models/Network.cs" />
+      <File FileName="Models/NetworkAttributes.cs" />
+      <File FileName="Models/NetworkScore.cs" />
+      <File FileName="Models/Measurement.cs" />
+      <File FileName="Models/Provider.cs" Line="28" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="api" expanded="True">
+            <Node name="api" expanded="True" />
+            <Node name="api.Tests" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
