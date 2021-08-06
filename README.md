@@ -1,14 +1,14 @@
 # sna-api
 
+## Manually add local volume
 ```
-Manually add volume
+
 $ docker volume create --name=pgdata
 
-
-# $ docker build -t sna/api .
-# $ docker build -t postgres . 
-
-$ cd /path/to/docker-compose.yml
+```
+## Build/run the project with Docker Compose
+```
+$ cd sna/
 $ docker-compose build
 $ docker-compose up
 ```

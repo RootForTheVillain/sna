@@ -1,0 +1,47 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+networks:
+  sna-api-dev:
+    driver: "bridge"
+
+services:
+  api:
+    image: sna/api:latest
+    container_name: "sna-api"
+    depends_on:
+      - "postgres"
+    build:
+      context: ./sna-api/api/
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+      - 5001:5001
+    networks: 
+      - sna-api-dev
+
+  postgres:
+    image: postgres
+    container_name: "sna-postgres"  
+    build:
+      context: ./sna-postgres
+      dockerfile: ./Dockerfile
+    ports:
+      - 5432:5432
+    volumes:
+      - ../sna-postgres:/var/lib/postgresql/data
+      - ../sna-postgres:/docker-entrypoint-initdb.d/data.dump
+    environment:
+      # PGDATA: /var/lib/postgresql/data
+      #POSTGRES_USER: "postgres"
+      #POSTGRES_PASSWORD: ""
+      #POSTGRES_DB: "postgres"
+      #POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: "sna-db-user"
+      POSTGRES_PASSWORD: "p@$$w0rd"
+      POSTGRES_DB: "sna"
+    networks: 
+      - sna-api-dev
+volumes: 
+  pgdata:
+    #external: true

@@ -9,6 +9,9 @@ using Microsoft.OpenApi.Models;
 
 using api.Models;
 using api.Interfaces;
+using System;
+using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace api
 {
@@ -60,6 +63,14 @@ namespace api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        public void ApplyMigrations(AppDbContext appDbContext)
+        {
+            if (appDbContext.Database.GetPendingMigrations().Any())
+            {
+                appDbContext.Database.Migrate();
+            }
         }
     }
 }

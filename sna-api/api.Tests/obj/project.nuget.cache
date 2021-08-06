@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KichP5xpETANNzpMvW6xxihYgI1iBHTUAhYRFBCs6xuQILTKnjVZfqANpwFyk7vF23u03EIaU8TPZgTyU9rWxA==",
+  "dgSpecHash": "g+bXT+gabkoBTAiAfchYrGWrNpPhmSWHfgZ5+cBw+mbIrc7msZnfrE6ODJQFUnToUzm9CeQFEcPbdwaxrUQrGw==",
   "success": true,
-  "projectFilePath": "/Users/brent/Documents/sna/sna-api/api.Tests/api.Tests.csproj",
+  "projectFilePath": "/Users/brent/Projects/sna/sna-api/api.Tests/api.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/brent/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",
     "/Users/brent/.nuget/packages/coverlet.collector/3.0.2/coverlet.collector.3.0.2.nupkg.sha512",

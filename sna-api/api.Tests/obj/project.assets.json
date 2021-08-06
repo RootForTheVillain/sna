@@ -8231,11 +8231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brent/Documents/sna/sna-api/api.Tests/api.Tests.csproj",
+      "projectUniqueName": "/Users/brent/Projects/sna/sna-api/api.Tests/api.Tests.csproj",
       "projectName": "api.Tests",
-      "projectPath": "/Users/brent/Documents/sna/sna-api/api.Tests/api.Tests.csproj",
+      "projectPath": "/Users/brent/Projects/sna/sna-api/api.Tests/api.Tests.csproj",
       "packagesPath": "/Users/brent/.nuget/packages/",
-      "outputPath": "/Users/brent/Documents/sna/sna-api/api.Tests/obj/",
+      "outputPath": "/Users/brent/Projects/sna/sna-api/api.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/brent/.config/NuGet/NuGet.Config"
@@ -8250,8 +8250,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/brent/Documents/sna/sna-api/api/api.csproj": {
-              "projectPath": "/Users/brent/Documents/sna/sna-api/api/api.csproj"
+            "/Users/brent/Projects/sna/sna-api/api/api.csproj": {
+              "projectPath": "/Users/brent/Projects/sna/sna-api/api/api.csproj"
             }
           }
         }

@@ -1,9 +1,10 @@
 FROM postgres AS build-env
+#ADD data.dump /docker-entrypoint-initdb.d
 WORKDIR /app
 
-ENV POSTGRES_USER docker
-ENV POSTGRES_PASSWORD docker
-ENV POSTGRES_DB docker
+ENV POSTGRES_USER sna-db-user
+ENV POSTGRES_PASSWORD p@$$w0rd
+ENV POSTGRES_DB sna
 
 # Expose the PostgreSQL port
 EXPOSE 5432

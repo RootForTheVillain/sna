@@ -16,9 +16,7 @@ RUN dotnet build "api.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "api.csproj" -c Release -o /app/publish
 
-# Run updates
-RUN dotnet ef database update -c AppDbContext
-#RUN dotnet ef database update -c ConfigurationDbContext
+#RUN dotnet ef database update
 
 FROM base AS final
 WORKDIR /app
