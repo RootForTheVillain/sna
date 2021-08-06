@@ -42,4 +42,4 @@ services:
       - sna-api-dev
 volumes: 
   pgdata:
-    external: true
+    #external: true
