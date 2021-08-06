@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sDZYxLW1+QeaFl1eJTyXJl1HFra9KWTuf16eNITcsciT7+aeitmoLH7m7cAMyXgnc7sm/+varwL0bXYS5opyng==",
+  "dgSpecHash": "367E5tIpxOj/3qi1bOXtp/Lkfc39FPv0oX19G3R6P55wA+U4IUp+0DrHd710cnueQ4+k4z95cz4ePVSiRkXD/Q==",
   "success": true,
-  "projectFilePath": "/Users/brent/Documents/sna/sna-api/api/api.csproj",
+  "projectFilePath": "/Users/brent/Projects/sna/sna-api/api/api.csproj",
   "expectedPackageFiles": [
     "/Users/brent/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",
     "/Users/brent/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",

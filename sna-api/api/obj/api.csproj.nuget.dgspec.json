@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/brent/Documents/sna/sna-api/api/api.csproj": {}
+    "/Users/brent/Projects/sna/sna-api/api/api.csproj": {}
   },
   "projects": {
-    "/Users/brent/Documents/sna/sna-api/api/api.csproj": {
+    "/Users/brent/Projects/sna/sna-api/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/brent/Documents/sna/sna-api/api/api.csproj",
+        "projectUniqueName": "/Users/brent/Projects/sna/sna-api/api/api.csproj",
         "projectName": "api",
-        "projectPath": "/Users/brent/Documents/sna/sna-api/api/api.csproj",
+        "projectPath": "/Users/brent/Projects/sna/sna-api/api/api.csproj",
         "packagesPath": "/Users/brent/.nuget/packages/",
-        "outputPath": "/Users/brent/Documents/sna/sna-api/api/obj/",
+        "outputPath": "/Users/brent/Projects/sna/sna-api/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/brent/.nuget/NuGet/NuGet.Config"
+          "/Users/brent/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
