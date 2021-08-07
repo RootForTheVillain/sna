@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{D1380A4A-1187-4CAB-AA54-1B53DDE1FC07}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/appsettings.json">
     <Files>
-      <File FileName="api/Program.cs" Line="1" Column="1" />
-      <File FileName="api/Startup.cs" Line="1" Column="1" />
+      <File FileName="api/Program.cs" Line="14" Column="6" />
+      <File FileName="api/Startup.cs" Line="57" Column="1" />
+      <File FileName="api/appsettings.json" Line="11" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,8 +12,7 @@
             <Node name="api" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
-              <Node name="Program.cs" selected="True" />
+              <Node name="appsettings.json" expanded="True" selected="True" />
             </Node>
             <Node name="api.Tests" expanded="True" />
           </Node>
