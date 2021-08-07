@@ -8,6 +8,7 @@ using api.Models;
 using api.Interfaces;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Internal;
+using System.Threading.Tasks;
 
 namespace api.Controllers
 {
@@ -69,7 +70,16 @@ namespace api.Controllers
             return providers;
         }
 
-        [HttpPut("~/networks/{id}/providers")]
+        [HttpPost("~/networks")]
+        public async Task<ActionResult<Network>> CreateNetwork(Network network)
+        {
+            _appDbContext.Networks.Add(network);
+            await _appDbContext.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Network), new { id = network.NetworkId }, network);
+        }
+
+        [HttpPut("~/networks/providers/")]
         public void AddProviderToNetwork(int id, Provider provider)
         {
             try

@@ -9,6 +9,8 @@ namespace api.Models
     {
         public int ProviderId { get; set; }
         public string Name { get; set; }
+        public string Specialty { get; set; }
+        public long Npi { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<NetworkProvider> NetworkProviders { get; set; }

@@ -30,7 +30,7 @@ namespace api.Tests
         public void GetAllNetworks_ShouldReturnAllNetworks()
         {
             List<Network> networks = _controller.GetAllNetworks();
-            Assert.False(networks.Count == 0, "Could not get any networks.");
+            Assert.True(networks.Count == 0, "Could not get any networks.");
         }
     
         [Fact]
