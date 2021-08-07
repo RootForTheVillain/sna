@@ -64,13 +64,5 @@ namespace api
                 endpoints.MapControllers();
             });
         }
-
-        public void ApplyMigrations(AppDbContext appDbContext)
-        {
-            if (appDbContext.Database.GetPendingMigrations().Any())
-            {
-                appDbContext.Database.Migrate();
-            }
-        }
     }
 }

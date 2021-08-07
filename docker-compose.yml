@@ -12,7 +12,7 @@ services:
     depends_on:
       - "postgres"
     build:
-      context: ./sna-api/api/
+      context: ./sna-api/api
       dockerfile: ./Dockerfile
     ports:
       - 5000:5000
@@ -42,4 +42,3 @@ services:
       - sna-api-dev
 volumes: 
   pgdata:
-    #external: true
