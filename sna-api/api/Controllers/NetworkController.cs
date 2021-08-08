@@ -96,7 +96,7 @@ namespace api.Controllers
                     networkProviders.Add(np);
                     _appDbContext.SaveChanges();
                 }
-            }
+            }   
             catch (Exception ex)
             {
                 _logger.LogError(ex.ToString());

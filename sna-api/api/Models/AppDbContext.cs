@@ -29,6 +29,7 @@ namespace api.Models
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<Organization> Organizations { get; set; }
         public DbSet<Network> Networks { get; set; }
         public DbSet<Provider> Providers { get; set; }
     }

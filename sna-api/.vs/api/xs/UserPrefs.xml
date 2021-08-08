@@ -1,19 +1,23 @@
 ﻿<Properties StartupConfiguration="{D1380A4A-1187-4CAB-AA54-1B53DDE1FC07}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/OrganizationController.cs">
     <Files>
       <File FileName="api/Models/Network.cs" Line="1" Column="1" />
-      <File FileName="api/Controllers/NetworkController.cs" Line="99" Column="17" />
-      <File FileName="api/Startup.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/NetworkController.cs" Line="19" Column="1" />
+      <File FileName="api/Controllers/OrganizationController.cs" Line="50" Column="14" />
+      <File FileName="api/Models/Organization.cs" Line="6" Column="46" />
+      <File FileName="api/Models/Provider.cs" Line="13" Column="51" />
+      <File FileName="api/Models/AppDbContext.cs" Line="28" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="api" expanded="True">
             <Node name="api" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="OrganizationController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="api.Tests" expanded="True" />
           </Node>

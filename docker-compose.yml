@@ -32,12 +32,9 @@ services:
       - ./sna-postgres:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: ""
-      POSTGRES_DB: "postgres"
+      #POSTGRES_PASSWORD: ""
+      POSTGRES_DB: "sna"
       POSTGRES_HOST_AUTH_METHOD: trust
-      #POSTGRES_USER: "sna-db-user"
-      #POSTGRES_PASSWORD: "p@$$w0rd"
-      #POSTGRES_DB: "sna"
     networks: 
       - sna-api-dev
 volumes: 

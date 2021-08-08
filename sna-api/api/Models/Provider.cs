@@ -9,6 +9,8 @@ namespace api.Models
     {
         public int ProviderId { get; set; }
         public string Name { get; set; }
+
+        /* Do these go on Provider or Organization */
         public string Specialty { get; set; }
         public long Npi { get; set; }
 
