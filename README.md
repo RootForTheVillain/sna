@@ -8,14 +8,11 @@ $ cd /path/to/docker/compose/yml
 $ docker-compose build
 $ docker-compose up
 ```
-## To reset your database:
+## To reset your database, regenerate the pg dump, then comment out the postgres user (this will cause database create to fail)
 ````
 $ pg_dumpall > sna-postgres/init/data.sql
-```
 
 ## Then you'll need to remove the postgres user from data.sql by removing or commenting this lines or it will fail to build the database:
 
-```
-CREATE ROLE postgres;
-ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS;
-```
+--CREATE ROLE postgres;
+--ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS;
