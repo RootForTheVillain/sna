@@ -1,13 +1,13 @@
 # sna-api
 
-## A data volume (sna_pgdata) will automatically be created. Removing this volume will delete your data forever.
-
 ## Build your containers and run the project with Docker Compose:
 ```
 $ cd /path/to/docker/compose/yml
 $ docker-compose build
 $ docker-compose up
 ```
+## Data is stored in a volume named sna_pgdata. 
+
 ## To reset your database, regenerate the pg dump, then comment out the postgres user (this will cause database create to fail)
 ````
 $ pg_dumpall > sna-postgres/init/data.sql
