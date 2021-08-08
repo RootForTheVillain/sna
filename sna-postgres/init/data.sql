@@ -1,11 +1,120 @@
 --
+-- PostgreSQL database cluster dump
+--
+
+SET default_transaction_read_only = off;
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+
+--
+-- Roles
+--
+
+CREATE ROLE brent;
+ALTER ROLE brent WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'md55acf24776d75ab404feb6582d8310610';
+--CREATE ROLE postgres;
+--ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS;
+CREATE ROLE "sna-db-user";
+ALTER ROLE "sna-db-user" WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'md5c3f4b7eafbaca29e0cb3febef404bb03';
+
+
+
+
+
+
+--
+-- Databases
+--
+
+--
+-- Database "template1" dump
+--
+
+\connect template1
+
+--
 -- PostgreSQL database dump
 --
 
 -- Dumped from database version 13.3
 -- Dumped by pg_dump version 13.3
 
--- Started on 2021-08-08 11:51:30 EDT
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- Database "postgres" dump
+--
+
+\connect postgres
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.3
+-- Dumped by pg_dump version 13.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- Database "sna" dump
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.3
+-- Dumped by pg_dump version 13.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: sna; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE sna WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'en_US.UTF-8';
+
+
+ALTER DATABASE sna OWNER TO postgres;
+
+\connect sna
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -23,14 +132,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Roles
---
-
-CREATE ROLE "sna-db-user";
-ALTER ROLE "sna-db-user" WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'md5c3f4b7eafbaca29e0cb3febef404bb03';
-
---
--- TOC entry 208 (class 1259 OID 16611)
 -- Name: Facilities; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -43,7 +144,6 @@ CREATE TABLE public."Facilities" (
 ALTER TABLE public."Facilities" OWNER TO postgres;
 
 --
--- TOC entry 209 (class 1259 OID 16619)
 -- Name: Facilities_FacilityId_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -58,7 +158,6 @@ ALTER TABLE public."Facilities" ALTER COLUMN "FacilityId" ADD GENERATED ALWAYS A
 
 
 --
--- TOC entry 206 (class 1259 OID 16571)
 -- Name: NetworkProvider; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -71,7 +170,6 @@ CREATE TABLE public."NetworkProvider" (
 ALTER TABLE public."NetworkProvider" OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 16396)
 -- Name: Networks; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -84,7 +182,6 @@ CREATE TABLE public."Networks" (
 ALTER TABLE public."Networks" OWNER TO postgres;
 
 --
--- TOC entry 203 (class 1259 OID 16399)
 -- Name: Network_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -99,7 +196,6 @@ ALTER TABLE public."Networks" ALTER COLUMN "NetworkId" ADD GENERATED ALWAYS AS I
 
 
 --
--- TOC entry 207 (class 1259 OID 16603)
 -- Name: Organizations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -115,7 +211,6 @@ CREATE TABLE public."Organizations" (
 ALTER TABLE public."Organizations" OWNER TO postgres;
 
 --
--- TOC entry 210 (class 1259 OID 16646)
 -- Name: Organizations_OrganizationId_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -130,7 +225,6 @@ ALTER TABLE public."Organizations" ALTER COLUMN "OrganizationId" ADD GENERATED A
 
 
 --
--- TOC entry 200 (class 1259 OID 16388)
 -- Name: Providers; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -145,7 +239,6 @@ CREATE TABLE public."Providers" (
 ALTER TABLE public."Providers" OWNER TO postgres;
 
 --
--- TOC entry 201 (class 1259 OID 16391)
 -- Name: Provider_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -160,7 +253,6 @@ ALTER TABLE public."Providers" ALTER COLUMN "ProviderId" ADD GENERATED ALWAYS AS
 
 
 --
--- TOC entry 204 (class 1259 OID 16455)
 -- Name: old_customers; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -173,7 +265,6 @@ CREATE TABLE public.old_customers (
 ALTER TABLE public.old_customers OWNER TO postgres;
 
 --
--- TOC entry 205 (class 1259 OID 16463)
 -- Name: customers_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -188,8 +279,6 @@ ALTER TABLE public.old_customers ALTER COLUMN "CustomerId" ADD GENERATED ALWAYS 
 
 
 --
--- TOC entry 3302 (class 0 OID 16611)
--- Dependencies: 208
 -- Data for Name: Facilities; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -198,8 +287,6 @@ COPY public."Facilities" ("FacilityId", "Name") FROM stdin;
 
 
 --
--- TOC entry 3300 (class 0 OID 16571)
--- Dependencies: 206
 -- Data for Name: NetworkProvider; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -214,8 +301,6 @@ COPY public."NetworkProvider" ("NetworkId", "ProviderId") FROM stdin;
 
 
 --
--- TOC entry 3296 (class 0 OID 16396)
--- Dependencies: 202
 -- Data for Name: Networks; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -228,8 +313,6 @@ COPY public."Networks" ("NetworkId", "Name") FROM stdin;
 
 
 --
--- TOC entry 3301 (class 0 OID 16603)
--- Dependencies: 207
 -- Data for Name: Organizations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -10238,8 +10321,6 @@ EVEXIAS METRITA - COLUMBIA LLC	2900 Trimble Rd Ste 107	Surgical Services (Outpat
 
 
 --
--- TOC entry 3294 (class 0 OID 16388)
--- Dependencies: 200
 -- Data for Name: Providers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -10254,8 +10335,6 @@ COPY public."Providers" ("ProviderId", "Name", "Specialty", "Npi") FROM stdin;
 
 
 --
--- TOC entry 3298 (class 0 OID 16455)
--- Dependencies: 204
 -- Data for Name: old_customers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -10266,8 +10345,6 @@ COPY public.old_customers ("CustomerId", "Name") FROM stdin;
 
 
 --
--- TOC entry 3317 (class 0 OID 0)
--- Dependencies: 209
 -- Name: Facilities_FacilityId_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -10275,8 +10352,6 @@ SELECT pg_catalog.setval('public."Facilities_FacilityId_seq"', 1, false);
 
 
 --
--- TOC entry 3318 (class 0 OID 0)
--- Dependencies: 203
 -- Name: Network_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -10284,8 +10359,6 @@ SELECT pg_catalog.setval('public."Network_id_seq"', 4, true);
 
 
 --
--- TOC entry 3319 (class 0 OID 0)
--- Dependencies: 210
 -- Name: Organizations_OrganizationId_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -10293,8 +10366,6 @@ SELECT pg_catalog.setval('public."Organizations_OrganizationId_seq"', 10000, tru
 
 
 --
--- TOC entry 3320 (class 0 OID 0)
--- Dependencies: 201
 -- Name: Provider_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -10302,8 +10373,6 @@ SELECT pg_catalog.setval('public."Provider_id_seq"', 9, true);
 
 
 --
--- TOC entry 3321 (class 0 OID 0)
--- Dependencies: 205
 -- Name: customers_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -10311,7 +10380,6 @@ SELECT pg_catalog.setval('public."customers_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3161 (class 2606 OID 16618)
 -- Name: Facilities Facilities_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10320,7 +10388,6 @@ ALTER TABLE ONLY public."Facilities"
 
 
 --
--- TOC entry 3155 (class 2606 OID 16575)
 -- Name: NetworkProvider PK_NetworkProvider_NetworkId_ProviderId; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10329,7 +10396,6 @@ ALTER TABLE ONLY public."NetworkProvider"
 
 
 --
--- TOC entry 3151 (class 2606 OID 16557)
 -- Name: Networks PK_Networks_NetworkId; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10338,7 +10404,6 @@ ALTER TABLE ONLY public."Networks"
 
 
 --
--- TOC entry 3159 (class 2606 OID 16649)
 -- Name: Organizations PK_Organizations; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10347,7 +10412,6 @@ ALTER TABLE ONLY public."Organizations"
 
 
 --
--- TOC entry 3149 (class 2606 OID 16565)
 -- Name: Providers PK_Providers_ProviderId; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10356,7 +10420,6 @@ ALTER TABLE ONLY public."Providers"
 
 
 --
--- TOC entry 3153 (class 2606 OID 16462)
 -- Name: old_customers customers_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10365,7 +10428,6 @@ ALTER TABLE ONLY public.old_customers
 
 
 --
--- TOC entry 3156 (class 1259 OID 16576)
 -- Name: fki_FK_NetworkProvider_Networks_NetworkId; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -10373,7 +10435,6 @@ CREATE INDEX "fki_FK_NetworkProvider_Networks_NetworkId" ON public."NetworkProvi
 
 
 --
--- TOC entry 3157 (class 1259 OID 16577)
 -- Name: fki_FK_NetworkProvider_Providers_ProviderId; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -10381,7 +10442,6 @@ CREATE INDEX "fki_FK_NetworkProvider_Providers_ProviderId" ON public."NetworkPro
 
 
 --
--- TOC entry 3162 (class 2606 OID 16578)
 -- Name: NetworkProvider FK_NetworkProvider_Networks_NetworkId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10390,7 +10450,6 @@ ALTER TABLE ONLY public."NetworkProvider"
 
 
 --
--- TOC entry 3163 (class 2606 OID 16583)
 -- Name: NetworkProvider FK_NetworkProvider_Providers_ProviderId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -10399,8 +10458,6 @@ ALTER TABLE ONLY public."NetworkProvider"
 
 
 --
--- TOC entry 3310 (class 0 OID 0)
--- Dependencies: 206
 -- Name: TABLE "NetworkProvider"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10408,8 +10465,6 @@ GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public."NetworkProvider" TO "sna-db-u
 
 
 --
--- TOC entry 3311 (class 0 OID 0)
--- Dependencies: 202
 -- Name: TABLE "Networks"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10417,8 +10472,6 @@ GRANT ALL ON TABLE public."Networks" TO "sna-db-user";
 
 
 --
--- TOC entry 3312 (class 0 OID 0)
--- Dependencies: 203
 -- Name: SEQUENCE "Network_id_seq"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10426,8 +10479,6 @@ GRANT ALL ON SEQUENCE public."Network_id_seq" TO "sna-db-user";
 
 
 --
--- TOC entry 3313 (class 0 OID 0)
--- Dependencies: 207
 -- Name: TABLE "Organizations"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10435,8 +10486,6 @@ GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public."Organizations" TO "sna-db-use
 
 
 --
--- TOC entry 3314 (class 0 OID 0)
--- Dependencies: 200
 -- Name: TABLE "Providers"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10444,8 +10493,6 @@ GRANT ALL ON TABLE public."Providers" TO "sna-db-user";
 
 
 --
--- TOC entry 3315 (class 0 OID 0)
--- Dependencies: 201
 -- Name: SEQUENCE "Provider_id_seq"; Type: ACL; Schema: public; Owner: postgres
 --
 
@@ -10453,17 +10500,17 @@ GRANT ALL ON SEQUENCE public."Provider_id_seq" TO "sna-db-user";
 
 
 --
--- TOC entry 3316 (class 0 OID 0)
--- Dependencies: 204
 -- Name: TABLE old_customers; Type: ACL; Schema: public; Owner: postgres
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.old_customers TO "sna-db-user";
 
 
--- Completed on 2021-08-08 11:51:31 EDT
-
 --
 -- PostgreSQL database dump complete
+--
+
+--
+-- PostgreSQL database cluster dump complete
 --
 
