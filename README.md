@@ -6,7 +6,7 @@ $ cd /path/to/docker/compose/yml
 $ docker-compose build
 $ docker-compose up
 ```
-## Data is stored in a volume named sna_pgdata. 
+Data is stored in a volume named sna_pgdata. 
 
 ## To reset your database, regenerate the pg dump, then comment out the postgres user (this will cause database create to fail)
 ````

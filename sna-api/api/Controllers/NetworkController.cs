@@ -2,12 +2,9 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Data.Entity;
 
 using api.Models;
-using api.Interfaces;
 using System.Linq;
-using Microsoft.EntityFrameworkCore.Internal;
 using System.Threading.Tasks;
 
 namespace api.Controllers
@@ -55,21 +52,6 @@ namespace api.Controllers
             return network;
         }
 
-        [HttpGet("~/networks/{id}/providers")]
-        public ICollection<NetworkProvider> GetProvidersByNetworkId(int id)
-        {
-            List<NetworkProvider> providers = new();
-            try
-            {
-                providers = _appDbContext.Networks.Find(id).NetworkProviders.ToList();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-            }
-            return providers;
-        }
-
         [HttpPost("~/networks")]
         public async Task<ActionResult<Network>> CreateNetwork(Network network)
         {
@@ -77,30 +59,6 @@ namespace api.Controllers
             await _appDbContext.SaveChangesAsync();
 
             return CreatedAtAction(nameof(Network), new { id = network.NetworkId }, network);
-        }
-
-        [HttpPut("~/networks/providers/")]
-        public void AddProviderToNetwork(int id, Provider provider)
-        {
-            try
-            {
-                NetworkProvider np = new();
-                np.NetworkId = id;
-                //np.ProviderId = provider.ProviderId;
-                np.Provider = provider;
-
-                var networkProviders = _appDbContext.Networks.Find(id).NetworkProviders;
-
-                if (!networkProviders.Contains(np))
-                {
-                    networkProviders.Add(np);
-                    _appDbContext.SaveChanges();
-                }
-            }   
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-            }
         }
 
 

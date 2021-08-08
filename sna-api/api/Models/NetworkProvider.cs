@@ -9,6 +9,7 @@ namespace api.Models
         //public virtual Network Network { get; set; }
 
         public int ProviderId { get; set; }
+        public bool IsInNetwork { get; set; }
         public virtual Provider Provider { get; set; }
     }
 }
