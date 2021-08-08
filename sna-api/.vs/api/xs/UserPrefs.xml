@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{D1380A4A-1187-4CAB-AA54-1B53DDE1FC07}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/ProviderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/NetworkController.cs">
     <Files>
       <File FileName="api/Models/Network.cs" Line="1" Column="1" />
-      <File FileName="api/Controllers/NetworkController.cs" Line="80" Column="10" />
+      <File FileName="api/Controllers/NetworkController.cs" Line="10" Column="25" />
       <File FileName="api/Models/Provider.cs" Line="13" Column="54" />
       <File FileName="api/Models/AppDbContext.cs" Line="28" Column="1" />
       <File FileName="api/Models/NetworkProvider.cs" Line="13" Column="55" />
-      <File FileName="api/Controllers/ProviderController.cs" Line="26" Column="1" />
+      <File FileName="api/Controllers/ProviderController.cs" Line="39" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +14,7 @@
           <Node name="api" expanded="True">
             <Node name="api" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ProviderController.cs" selected="True" />
+                <Node name="NetworkController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
