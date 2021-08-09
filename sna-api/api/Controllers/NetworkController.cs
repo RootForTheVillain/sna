@@ -52,6 +52,22 @@ namespace api.Controllers
             return network;
         }
 
+        [HttpGet("~/networks/{id}/favorites")]
+        public List<NetworkProvider> GetFavoritesByNetworkId(int id)
+        {
+            List<NetworkProvider> favorites = new();
+            try
+            {
+                Network network = _appDbContext.Networks.Find(id);
+                favorites = network.NetworkProviders.Where(np => np.IsFavorite).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+            return favorites;
+        }
+
         [HttpPost("~/networks")]
         public async Task<ActionResult<Network>> CreateNetwork(Network network)
         {

@@ -1,22 +1,23 @@
 ﻿<Properties StartupConfiguration="{D1380A4A-1187-4CAB-AA54-1B53DDE1FC07}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/NetworkController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Models/NetworkProvider.cs">
     <Files>
-      <File FileName="api/Models/Network.cs" Line="1" Column="1" />
-      <File FileName="api/Controllers/NetworkController.cs" Line="10" Column="25" />
-      <File FileName="api/Models/Provider.cs" Line="13" Column="54" />
-      <File FileName="api/Models/AppDbContext.cs" Line="28" Column="1" />
-      <File FileName="api/Models/NetworkProvider.cs" Line="13" Column="55" />
-      <File FileName="api/Controllers/ProviderController.cs" Line="39" Column="10" />
+      <File FileName="api/Models/Network.cs" Line="17" Column="9" />
+      <File FileName="api/Models/Provider.cs" Line="18" Column="9" />
+      <File FileName="api/Models/AppDbContext.cs" Line="27" Column="80" />
+      <File FileName="api/Controllers/NetworkController.cs" Line="62" Column="47" />
+      <File FileName="api/Models/NetworkProvider.cs" Line="9" Column="9" />
+      <File FileName="api/Controllers/ProviderController.cs" Line="47" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="api" expanded="True">
             <Node name="api" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="NetworkController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="NetworkProvider.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
             <Node name="api.Tests" expanded="True" />

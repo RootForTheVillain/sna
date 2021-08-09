@@ -47,9 +47,7 @@ namespace api.Tests
             int startLength = _context.Networks.Find(1).NetworkProviders.Count;
 
             Provider provider = new();
-            provider.Name = "Dr. " + Guid.NewGuid().ToString().Substring(0, 5);
-
-            _controller.AddProviderToNetwork(1, provider);
+            provider.FirstName = "Dr. " + Guid.NewGuid().ToString().Substring(0, 5);
 
             endLength = _context.Networks.Find(1).NetworkProviders.Count;
 

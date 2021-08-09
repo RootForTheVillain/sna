@@ -187,20 +187,6 @@ CREATE TABLE public."NetworkProvider" (
 ALTER TABLE public."NetworkProvider" OWNER TO postgres;
 
 --
--- Name: NetworkProvider_NetworkId_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-ALTER TABLE public."NetworkProvider" ALTER COLUMN "NetworkId" ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME public."NetworkProvider_NetworkId_seq"
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1
-);
-
-
---
 -- Name: Networks; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1334,6 +1320,14 @@ COPY public."Members" ("MemberId", "ZipCode", "Lattitude", "Longitude") FROM std
 --
 
 COPY public."NetworkProvider" ("NetworkId", "ProviderId", "IsInNetwork", "IsVisible", "IsFavorite") FROM stdin;
+1	33011	t	t	t
+1	33012	t	t	t
+1	33013	t	t	t
+1	33014	t	t	t
+1	33015	t	t	t
+2	33016	t	t	t
+2	33017	t	t	t
+2	33018	t	t	t
 \.
 
 
@@ -1342,10 +1336,16 @@ COPY public."NetworkProvider" ("NetworkId", "ProviderId", "IsInNetwork", "IsVisi
 --
 
 COPY public."Networks" ("NetworkId", "Name") FROM stdin;
-1	Network Uno
-2	Network Dos
-3	Network Tres
-4	Network Numero Quatro
+1	Austin
+2	Austin TDI
+3	Broward
+4	Central Valley
+5	Cleveland
+6	Indy
+7	New Orleans
+8	Orange CA
+9	South Florida
+10	WI Expansion
 \.
 
 
@@ -12383,17 +12383,10 @@ SELECT pg_catalog.setval('public."Facilities_FacilityId_seq"', 1, false);
 
 
 --
--- Name: NetworkProvider_NetworkId_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public."NetworkProvider_NetworkId_seq"', 26, true);
-
-
---
 -- Name: Network_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Network_id_seq"', 4, true);
+SELECT pg_catalog.setval('public."Network_id_seq"', 10, true);
 
 
 --

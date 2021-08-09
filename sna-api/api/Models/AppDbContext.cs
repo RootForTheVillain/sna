@@ -23,10 +23,14 @@ namespace api.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Handles Provider Visibility for the Network
+            modelBuilder.Entity<NetworkProvider>().Property<bool>("IsVisible");
             modelBuilder.Entity<NetworkProvider>()
-                    .HasKey(x => new { x.NetworkId, x.ProviderId });
+                .HasQueryFilter(m => EF.Property<bool>(m, "IsVisible") == true)
+                .HasKey(x => new { x.NetworkId, x.ProviderId });
 
             base.OnModelCreating(modelBuilder);
+
         }
 
         public DbSet<Organization> Organizations { get; set; }

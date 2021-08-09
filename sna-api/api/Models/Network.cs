@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Models
 {
@@ -18,18 +19,11 @@ namespace api.Models
         [JsonIgnore]
         public virtual ICollection<NetworkProvider> NetworkProviders { get; set; }
 
+        //public virtual ICollection<IScore> Scores { get; set; }
+
         public Network()
         {
             NetworkProviders = new List<NetworkProvider>();
         }
-
-        /*public virtual IEnumerable<Provider> Providers
-        {
-            get => NetworkProviders.Select(r => r.Provider);
-            set => NetworkProviders = value.Select(v => new NetworkProvider()
-            {
-                ProviderId = v.ProviderId
-            }).ToList();
-        }*/
     }
 }
