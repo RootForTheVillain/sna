@@ -2,6 +2,7 @@
 
 using api.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace api.Models
 {
@@ -36,5 +37,15 @@ namespace api.Models
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Network> Networks { get; set; }
         public DbSet<Provider> Providers { get; set; }
+
+        internal Task SaveChanges(Network network)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Task<int> SaveChangesAsync(Network network)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

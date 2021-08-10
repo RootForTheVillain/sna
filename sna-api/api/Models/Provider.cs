@@ -7,6 +7,8 @@ namespace api.Models
 {
     public class Provider
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProviderId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -25,6 +25,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="docker-compose.debug.yml" />
     <None Remove="docker-compose.yml" />
+    <None Remove="Microsoft.FeatureManagement" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

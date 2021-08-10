@@ -68,31 +68,14 @@ namespace api.Controllers
             return favorites;
         }
 
-        [HttpPost("~/networks")]
+        [HttpPost]
         public async Task<ActionResult<Network>> CreateNetwork(Network network)
         {
             _appDbContext.Networks.Add(network);
             await _appDbContext.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Network), new { id = network.NetworkId }, network);
+            return CreatedAtAction(nameof(GetNetworkById), new { id = network.NetworkId }, network);
         }
-
-
-        /*
-         * RLS
-        [HttpGet("~/networks")]
-        public List<Network> GetNetworksByCustomerId(int id)
-        {
-            List<Network> networks = new();
-            try
-            {
-                networks = _appDbContext.Customers.Find(id).Networks.ToList();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-            }
-            return networks;
-        }*/
     }
 }
+            

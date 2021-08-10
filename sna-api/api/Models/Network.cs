@@ -13,11 +13,27 @@ namespace api.Models
 {
     public class Network
     {
+        private List<Provider> _providers = new();
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int NetworkId { get; set; }
         public string Name { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<NetworkProvider> NetworkProviders { get; set; }
+
+        /*public virtual List<Provider> Providers
+        {
+            get
+            {
+                foreach (NetworkProvider np in NetworkProviders)
+                {
+                    _providers.Add(np.Provider);
+                }
+                return _providers;
+            }
+        }*/
 
         //public virtual ICollection<IScore> Scores { get; set; }
 

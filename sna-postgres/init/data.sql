@@ -13,8 +13,6 @@ SET standard_conforming_strings = on;
 
 CREATE ROLE brent;
 ALTER ROLE brent WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'md55acf24776d75ab404feb6582d8310610';
---CREATE ROLE postgres;
---ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS;
 CREATE ROLE "sna-db-user";
 ALTER ROLE "sna-db-user" WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'md5c3f4b7eafbaca29e0cb3febef404bb03';
 
@@ -178,7 +176,6 @@ ALTER TABLE public."Members" OWNER TO "sna-db-user";
 CREATE TABLE public."NetworkProvider" (
     "NetworkId" integer NOT NULL,
     "ProviderId" integer NOT NULL,
-    "IsInNetwork" boolean DEFAULT true NOT NULL,
     "IsVisible" boolean DEFAULT true NOT NULL,
     "IsFavorite" boolean DEFAULT true NOT NULL
 );
@@ -1319,15 +1316,17 @@ COPY public."Members" ("MemberId", "ZipCode", "Lattitude", "Longitude") FROM std
 -- Data for Name: NetworkProvider; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."NetworkProvider" ("NetworkId", "ProviderId", "IsInNetwork", "IsVisible", "IsFavorite") FROM stdin;
-1	33011	t	t	t
-1	33012	t	t	t
-1	33013	t	t	t
-1	33014	t	t	t
-1	33015	t	t	t
-2	33016	t	t	t
-2	33017	t	t	t
-2	33018	t	t	t
+COPY public."NetworkProvider" ("NetworkId", "ProviderId", "IsVisible", "IsFavorite") FROM stdin;
+1	33013	t	t
+1	33014	t	t
+2	33016	t	t
+2	33017	t	t
+2	33018	t	t
+1	33011	t	f
+1	33012	t	f
+1	33015	f	t
+2	33012	t	t
+2	33013	t	t
 \.
 
 

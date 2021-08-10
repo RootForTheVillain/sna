@@ -52,5 +52,20 @@ namespace api.Controllers
             }
             return providers;
         }
+
+        [HttpGet("~/providers/{1}/networks")]
+        public List<Provider> GetNetworksByProviderId()
+        {
+            List<Provider> providers = new();
+            try
+            {
+                providers = _appDbContext.Providers.ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+            return providers;
+        }
     }
 }

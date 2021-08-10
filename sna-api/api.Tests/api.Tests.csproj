@@ -36,6 +36,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
     <None Remove="Microsoft.EntityFrameworkCore.Proxies" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.FeatureManagement" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="TestCustomerController.cs" />
